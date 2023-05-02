@@ -3,10 +3,9 @@
 ## What to do?
 
 * [Learn why you need Git and GitHub](#learn-why-you-need-git-and-gitHub)
-* [Install Git if needed](#install-git-if-needed)
 * [Learn how to use Git](#learn-how-to-use-git)
 * [Try it out!](#try-it-out)
-* [Discuss how our lab wants to organize it](#discuss-how-out-lab-wants-to-organize)
+* [Discuss usage in our lab](#discuss-usage-in-our-lab)
 * [Learn about other cool things you can do on GitHub](#learn-about-other-cool-things-you-can-do-on-github)
 
 ## Learn why you need Git and GitHub
@@ -41,6 +40,8 @@ https://www.freecodecamp.org/news/introduction-to-git-and-github/
 ### Branches
 
 https://learngitbranching.js.org/
+Some topics are quite advanced and you will hopefully never need them, but tutorials in `Main > Introduction Sequence` and in `Remote > Push & Pull -- Git Remotes!` are quite useful.
+
 
 ### Essential links
 
@@ -87,23 +88,31 @@ Suggestion: you can directly use Git for your projects, or test yourself by doin
 * Upload it on GitHub (think `git push`)
 
 
-## Discuss how our lab wants to organize it
+## Discuss usage in our lab
 
 The way our lab works with GitHub should not be set in stone. Here are a couple of suggestions:  
 
 * Maintain one private repository with all example notebooks relevant to the lab (e.g. ark, scyan, misty). People looking for a starting point to analyse their images should find everything in this folder. 
-* For each project, store your analyses in a dedicated repository. This should document how you went from the images to the results and plots in the final publication. Keeping track of what you did so you can come back to it after a while is essential, explaining and documenting your workflow to others is great, and making your whole analysis reproducible is ideal.
+* For each project, store your analyses in a dedicated repository. This should document how you went from the images to the results and plots in the final publication. 
+
+Note 1: The repo for your analyses will need to be public once you submit your manuscript but can be kept private before that. Usually there's no much risk in having it public unless there's a clear and novel scientific finding that may be scooped, or if you include the raw data in the repository by mistake.
+Note 2: Keeping track of what you did so you can come back to it after a while is essential, explaining and documenting your workflow to others is great, and making your whole analysis reproducible is ideal.
+
 * Common approaches to make your analyses reproducible include using [conda](https://docs.conda.io/en/latest/), [nextflow](https://www.nextflow.io/), [snakemake](https://snakemake.readthedocs.io/en/stable/) or [docker](https://www.docker.com/). 
 * How to structure your project (i.e. where to put data, notebooks, scripts, plots and so on) depends on your goal and your preferences but [cookiecutter](https://github.com/cookiecutter/cookiecutter) is a good starting point. Be carefule that GitHub does not like large files and your data should typically not be included in your repository but distributed separately, for instance with [figshare](https://figshare.com/) or [dryad](https://datadryad.org/stash).
+
+Here are a few open questions:
 * Do we want to use GitHub as a knowledge base (e.g. list of tools for spatial analyses) instead of spreadsheets?
 * Do we want to make use of Kanban boards on GitHub, for instance for [project ideas](https://github.com/orgs/HartmannLab/projects/1) or to distribute tasks?
+* Do we want a logo or something?
 
 
 ## Learn about other cool things you can do on GitHub
 
 ### Online editor, codespaces and GitHub Copilot
-You can edit files directly online with Visual Studio, which offers many convenient features to work on code.  
-GitHub also offers *Codespaces*, which is a virtual machine in which you can run your code directly from your browser and interact using Visual Studio. It also supports things like Jupyter Notebooks, and can be used for collaborating on the same code in real time. GitHub offers a smart code completion tool integrated within its editor and codespaces (something like chatGPT for code). These options come at a cost but can be free [for students and researchers](https://education.github.com/).
+You can edit files directly online with Visual Studio, which offers many convenient features to work on code. For that, simply change `github.com` to `github.dev` in your address bar.  For instance you could [edit this repository directly](https://github.dev/HartmannLab/GitWorkshop).  
+GitHub also offers *Codespaces*, which is a virtual machine in which you can run your code directly from your browser and interact using Visual Studio. It also supports things like Jupyter Notebooks, and can be used for collaborating on the same code in real time.  
+GitHub offers a smart code completion tool integrated within its editor and codespaces (something like chatGPT for code). These options come at a cost but can be free [for students and researchers](https://education.github.com/).
 
 
 ### GitHub actions and continuous development
@@ -111,3 +120,27 @@ GitHub can automate a lot of tasks using so-called *GitHub actions*. For instanc
 
 ### Make your code citable
 You can specify exactly which version of the code was used in your paper by associating a given release of your repository to a unique DOI [using Zenodo](https://zenodo.org/)
+
+### Other tricks
+
+#### Set up a README:
+
+The file named `README.md` is always the one displayed first when you visit a repo on GitHub. This is why it's used as a starting point to explain what your repository is for, and how to run its code.
+
+#### Commit often:
+Ideally each time you're done adding a new feature, function or plot, and each time you correct a bug.
+
+#### Commit working code:
+If someone clones the repository, they should be able to compile/run the code without debugging. If you need to commit a buggy version, do it an other branch and keep the latest compiling version of your code in the main branch.
+ 
+#### Tag your code:
+You can tag the latest commit in your active branch to give it a name and find it easily later on (for instance when reaching a stable release or before publishing).
+	
+	git tag -a versionName -m "Description of the version"
+
+#### Remember what's staged and what's not:
+If you create a new file and want it in your repository, `git add`. If you remove a file in your git folder with `rm`, it will still be part of your repository unless you use `git rm`.
+
+#### Git push regularly:
+If it's on GitHub, it's really safe and people (including Future-you) can have a look at your code if they need it.
+
