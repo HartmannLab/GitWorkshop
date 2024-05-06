@@ -29,11 +29,25 @@ https://github.com/HartmannLab
 We have a [GitHub organization](https://github.com/HartmannLab) for our group. This is a place to collect all our repositories and scripts. You can `git push` your repository there. Then, you and others in the group can access it anywhere, anytime. They may modify it without interfering with your local copy until you `git pull` the modified version from GitHub, and merge it with your own.  
 Note that repositories in the `HartmannLab` can be private (only accessible by other members) or public (accessible by anyone on the internet). You can start developping your scripts in a private repository and make it public once you're satisfied with it (which should be when a manuscript is submitted at the latest).
 
+### Example use cases
+
+#### 1. Managing Research Scripts and Data Analysis
+**Scenario**: A team of immunologists is studying the activation of cytotoxic lymphocytes and needs to perform statistical analyses on large imaging datasets.  
+**Use Case**: The team uses Git to manage changes to their data analysis scripts, which are written in Python and R. Each team member clones the Git repository to their local machine, making changes and committing updates as they refine their models. They use GitHub to push these changes, allowing others to pull the latest versions. This approach ensures that everyone is working with the most up-to-date scripts and can track how models evolve over time.
+
+#### 2. Developing and Sharing Research Software
+**Scenario**: A lab member develops a new tool for identifying metabolic niches.  
+**Use Case**: The lab uses GitHub to host the project, making it publicly accessible for broader use and collaboration. They use tags to release versions of the software, which helps users refer to or cite specific versions of the tool in their research. GitHub's release feature is used to distribute executables and source code, along with release notes explaining the changes and enhancements made. The lab also uses GitHub Actions to automate testing, ensuring that the software works across different operating systems and Python versions.
+
+#### 3. Educational Resource Sharing
+**Scenario**: A senior lab member welcoming new intern wants to share course materials and assignments.  
+**Use Case**: The mentor uses a GitHub repository to distribute lecture notes, assignments, and project templates. Interns can fork the repository to obtain their copies, work on assignments, and use pull requests to submit their work. The mentor can then review the submissions directly on GitHub, provide feedback, and merge the pull requests once the assignments are corrected.
+
 
 ## Learn how to use Git
 
 
-### Beguinner's guide
+### Beginner's guide
 
 https://www.freecodecamp.org/news/introduction-to-git-and-github/
 
@@ -90,6 +104,8 @@ Suggestion: you can directly use Git for your projects, or test yourself by doin
 
 ## Discuss usage in our lab
 
+### Lab-specific usage
+
 The way our lab works with GitHub should not be set in stone. Here are a couple of suggestions:  
 
 * Maintain one private repository with all example notebooks relevant to the lab (e.g. ark, scyan, misty). People looking for a starting point to analyse their images should find everything in this folder. 
@@ -105,6 +121,10 @@ Here are a few open questions:
 * Do we want to use GitHub as a knowledge base (e.g. list of tools for spatial analyses) instead of spreadsheets?
 * Do we want to make use of Kanban boards on GitHub, for instance for [project ideas](https://github.com/orgs/HartmannLab/projects/1) or to distribute tasks?
 * Do we want a logo or something?
+
+### Best practices
+
+When using Git, try to adhere to best practices to get the most of Git. Plan your workflow, by deciding on a branching strategy that suits your project’s needs, such as feature branching. Make frequent, small commits that capture changes logically and include clear, concise commit messages that explain the *why* behind each change, not just the *what*. Use branches to isolate development work without affecting the main or 'master' branch. If possible, try code reviewing with other lab members. Regularly pull changes from your repository to keep your local copy up to date and reduce merge conflicts. Avoid including large files in your repository and favor using links and instructions to set up the data whenever possible, to avoid forcing download large data volumes when pushing/pulling. Lastly, ensure sensitive data like passwords, API keys or clinical data are never committed to your repository; instead, use environment variables or configuration files excluded from version control by .gitignore. By following these practices, you can maximize the effectiveness of Git as a tool for collaborative development and maintain a clean, functional codebase.
 
 
 ## Learn about other cool things you can do on GitHub
@@ -143,4 +163,10 @@ If you create a new file and want it in your repository, `git add`. If you remov
 
 #### Git push regularly:
 If it's on GitHub, it's really safe and people (including Future-you) can have a look at your code if they need it.
+
+#### Do not panick and ask ChatGPT or your colleagues if you're stuck
+
+### Feedback is welcome!
+Is there anything you found unclear in this document? Did you find a resource to be particularly useful and it is not listed here yet? Go ahead a make a pull request to improve this repository!
+
 
